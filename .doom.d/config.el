@@ -52,4 +52,5 @@
 
 ;; haskell
 (after! lsp-haskell
-  (setq lsp-haskell-formatting-provider "brittany"))
+  (setq lsp-haskell-formatting-provider "brittany")
+  (custom-set-variables '(haskell-process-type 'stack-ghci)))
