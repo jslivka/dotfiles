@@ -512,13 +512,11 @@ return {
         require("gitsigns").setup({
           on_attach = function(bufnr)
             local gs = package.loaded.gitsigns
-  
             local function map(mode, l, r, opts)
               opts = opts or {}
               opts.buffer = bufnr
               vim.keymap.set(mode, l, r, opts)
             end
-  
             -- Navigation
             map("n", "]c", function()
               if vim.wo.diff then
@@ -529,7 +527,6 @@ return {
               end)
               return "<Ignore>"
             end, { expr = true })
-  
             map("n", "[c", function()
               if vim.wo.diff then
                 return "[c"
@@ -539,7 +536,6 @@ return {
               end)
               return "<Ignore>"
             end, { expr = true })
-  
             -- Actions
             map("n", "<leader>hs", gs.stage_hunk, { desc = "GitSigns state hunk" })
             map("n", "<leader>hr", gs.reset_hunk, { desc = "GitSigns reset hunk" })
@@ -562,7 +558,6 @@ return {
               gs.diffthis("~")
             end, { desc = "GitSigns diffthis" })
             map("n", "<leader>htd", gs.toggle_deleted, { desc = "GitSigns toggle_deleted" })
-  
             -- Text object
             map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "GitSigns select hunk" })
           end,
@@ -578,7 +573,6 @@ return {
       config = function()
         local mason = require("mason")
         local mason_tool_installer = require("mason-tool-installer")
-  
         -- enable mason and configure icons
         mason.setup({
           ui = {
@@ -589,7 +583,6 @@ return {
             },
           },
         })
-  
         mason_tool_installer.setup({
           ensure_installed = {
             "prettier",
@@ -628,4 +621,3 @@ return {
       },
     },
   }
-  
