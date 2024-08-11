@@ -1,12 +1,24 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-(require 'sly-asdf)
-(require 'sly-autoloads)
+(setq user-full-name "John Slivka"
+      user-mail-address "john@jslivka.net")
 
-(setq doom-theme 'doom-one)
+(setq projectile-indexing-method 'alien)
+(setq doom-theme 'doom-tokyo-night)
 (setq display-line-numbers-type t)
 (setq org-directory "~/org/")
-(setq inferior-lisp-program "sbcl")
 
-;; Transparency
-(set-frame-parameter (selected-frame) 'alpha '(90 50))
-(add-to-list 'default-frame-alist '(alpha 90 50))
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 16)
+      doom-variable-pitch-font (font-spec :family "Alegreya" :size 16))
+
+;; transparency
+(set-frame-parameter nil 'alpha-background 90)
+(add-to-list 'default-frame-alist '(alpha-background . 90))
+
+; sly
+(after! sly
+    (set-popup-rules!
+        '(("^\\*sly-mrepl"
+            :side right
+            :width 100
+            :quit nil
+            :ttl nil))))
