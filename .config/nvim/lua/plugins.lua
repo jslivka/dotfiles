@@ -42,7 +42,7 @@ return {
       dependencies = {
         "nvim-lua/plenary.nvim",  -- required
         "sindrets/diffview.nvim", -- optional - Diff integration
-  
+
         -- Only one of these is needed, not both.
         "nvim-telescope/telescope.nvim", -- optional
       },
@@ -117,9 +117,9 @@ return {
             ███████████ ███    ███ █████████ █████ █████ ████ █████  
            ██████  █████████████████████ ████ █████ █████ ████ ██████ 
         ]]
-  
+
         logo = string.rep("\n", 8) .. logo .. "\n\n"
-  
+
         local opts = {
           theme = "hyper",
           hide = {
@@ -153,12 +153,12 @@ return {
             end,
           },
         }
-  
+
         for _, button in ipairs(opts.config.center) do
           button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
           button.key_format = "  %s"
         end
-  
+
         -- close Lazy and re-open when the dashboard is ready
         if vim.o.filetype == "lazy" then
           vim.cmd.close()
@@ -169,7 +169,7 @@ return {
             end,
           })
         end
-  
+
         return opts
       end,
     },
@@ -200,20 +200,20 @@ return {
       },
       config = function()
         local lint = require("lint")
-  
+
         lint.linters_by_ft = {
           terraform = { "tflint" },
         }
-  
+
         local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-  
+
         vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
           group = lint_augroup,
           callback = function()
             lint.try_lint()
           end,
         })
-  
+
         vim.keymap.set("n", "<leader>ll", function()
           lint.try_lint()
         end, { desc = "Trigger linting for current file" })
@@ -224,7 +224,7 @@ return {
       event = { "BufReadPre", "BufNewFile" },
       config = function()
         local conform = require("conform")
-  
+
         conform.setup({
           formatters_by_ft = {
             lua = { "stylua" },
@@ -237,7 +237,7 @@ return {
             go = { "gofmt" },
           },
         })
-  
+
         vim.keymap.set({ "n", "v" }, "<leader>l", function()
           conform.format({
             lsp_fallback = true,
@@ -300,7 +300,7 @@ return {
       build = ":TSUpdate",
       config = function()
         local configs = require("nvim-treesitter.configs")
-  
+
         configs.setup({
           ensure_installed = {
             "c",
