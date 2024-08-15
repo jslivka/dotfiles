@@ -4,21 +4,11 @@ local formatters_by_ft = {
   cpp = { "clang_format" },
   c = { "clang_format" },
   go = { "gofumpt" },
-  cs = { "csharpier" },
   yaml = { "yamlfmt" },
   css = { "prettier" },
-  flow = { "prettier" },
-  graphql = { "prettier" },
   html = { "prettier" },
   json = { "prettier" },
-  javascriptreact = { "prettier" },
-  javascript = { "prettier" },
-  less = { "prettier" },
   markdown = { "prettier" },
-  scss = { "prettier" },
-  typescript = { "prettier" },
-  typescriptreact = { "prettier" },
-  vue = { "prettier" },
 }
 
 ---@type NvPluginSpec

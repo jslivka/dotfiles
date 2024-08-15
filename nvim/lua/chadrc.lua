@@ -261,8 +261,8 @@ M.mason = {
     -- "intelephense",
 
     -- C/C++
-    -- "clangd",
-    -- "clang-format",
+    "clangd",
+    "clang-format",
 
     -- CMake
     -- "neocmakelsp",
@@ -271,13 +271,13 @@ M.mason = {
     -- "jdtls",
 
     -- Yaml
-    -- "yaml-language-server",
+    "yaml-language-server",
 
     -- Python
     -- "basedpyright",
 
     -- Go
-    -- "gopls",
+    "gopls",
 
     -- C#
     -- "omnisharp",

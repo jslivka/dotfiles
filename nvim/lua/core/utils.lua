@@ -79,49 +79,18 @@ function RunCode()
       -- competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase<input.txt",
       competitive = "g++ -std=c++17 -Wall -DAL -O2 % -o $fileBase && $fileBase",
     },
-    cs = {
-      default = "dotnet run",
-    },
     go = {
       default = "go run %",
     },
     html = {
       default = "firefox %", -- NOTE: Change this based on your browser that you use
     },
-    java = {
-      default = "java %",
-    },
-    jl = {
-      default = "julia %",
-    },
-    js = {
-      default = "node %",
-      debug = "node --inspect %",
-    },
     lua = {
       default = "lua %",
     },
-    php = {
-      default = "php %",
-    },
-    pl = {
-      default = "perl %",
-    },
     py = {
       default = "python3 %",
-    },
-    r = {
-      default = "Rscript %",
-    },
-    rb = {
-      default = "ruby %",
-    },
-    rs = {
-      default = "rustc % && $fileBase",
-    },
-    ts = {
-      default = "tsc % && node $fileBase",
-    },
+    }
   }
 
   if supported_filetypes[file_extension] then
