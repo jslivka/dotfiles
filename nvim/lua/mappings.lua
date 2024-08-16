@@ -204,6 +204,9 @@ vim.keymap.set("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { desc = "General | Move th
 -- Enter Insert Mode Terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Enter Insert Mode", silent = true })
 
+-- Tabout
+vim.keymap.set("i", "<Tab>", '<cmd>EscapePair()<CR>', { noremap = true, silent = true })
+
 -- Word Search Increment
 vim.keymap.set("c", "<Tab>", function()
   if fn.getcmdtype() == "/" or fn.getcmdtype() == "?" then

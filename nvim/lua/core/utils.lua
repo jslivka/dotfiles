@@ -2,6 +2,27 @@
 
 local command = vim.api.nvim_create_user_command
 
+command("EscapePair", function()
+    local closers = {")", "]", "}", ">", "'", '"', "`", ","}
+    local line = vim.api.nvim_get_current_line()
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local after = line:sub(col + 1, -1)
+    local closer_col = #after + 1
+    local closer_i = nil
+    for i, closer in ipairs(closers) do
+        local cur_index, _ = after:find(closer)
+        if cur_index and (cur_index < closer_col) then
+            closer_col = cur_index
+            closer_i = i
+        end
+    end
+    if closer_i then
+        vim.api.nvim_win_set_cursor(0, {row, col + closer_col})
+    else
+        vim.api.nvim_win_set_cursor(0, {row, col + 1})
+    end
+end, { nargs = "*", desc = "Escape from surrounding pair" })
+
 command("Format", function(args)
   local status_ok, conform = pcall(require, "conform")
   if not status_ok then
@@ -50,8 +71,6 @@ function ClickSplit()
   vim.cmd "vsp"
 end
 
--- HUUUUUUUUUUUUUUUUUUUUUUUGE kudos and thanks to
--- https://github.com/hown3d for this function <3
 local function substitute(cmd)
   cmd = cmd:gsub("%%", vim.fn.expand "%")
   cmd = cmd:gsub("$fileBase", vim.fn.expand "%:r")
