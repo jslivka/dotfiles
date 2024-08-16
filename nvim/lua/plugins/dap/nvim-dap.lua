@@ -23,7 +23,7 @@ return {
     -- end
 
     -- NOTE: Make sure to install the needed files/exectubles through mason
-    require "plugins.dap.settings.cpptools"
+    require "plugins.dap.settings.codelldb"
     require "plugins.dap.settings.bash-debug-adapter"
     require "plugins.dap.settings.debugpy"
     require "plugins.dap.settings.go-debug-adapter"

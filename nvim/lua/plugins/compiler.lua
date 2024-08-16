@@ -15,7 +15,6 @@ return {
   dependencies = {
     {
       "stevearc/overseer.nvim",
-      commit = "400e762648b70397d0d315e5acaf0ff3597f2d8b",
       opts = {
         task_list = {
           direction = "bottom",

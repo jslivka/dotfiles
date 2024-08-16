@@ -45,7 +45,7 @@ return {
       { desc = "DAP | Breakpoint Condition", silent = true }
     )
 
-    vim.keymap.set("n", "<leader>dd", "<cmd>lua require'dapui'.toggle()<cr>", { desc = "DAP | Dap UI", silent = true })
+    vim.keymap.set("n", "<leader>dr", "<cmd>lua require'dapui'.toggle()<cr>", { desc = "DAP | Dap UI", silent = true })
 
     vim.keymap.set(
       "n",

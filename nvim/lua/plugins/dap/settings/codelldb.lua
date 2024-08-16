@@ -1,5 +1,5 @@
 local dap = require "dap"
-local extension_path = vim.env.HOME .. "/.local/share/nvim/mason/packages/codelldb/extension/"
+local extension_path = vim.env.HOME .. "/AppData/Local/nvim-data/mason/packages/codelldb/extension/"
 local codelldb_path = extension_path .. "adapter/codelldb"
 
 dap.adapters.codelldb = {

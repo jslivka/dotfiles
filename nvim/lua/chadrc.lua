@@ -263,9 +263,10 @@ M.mason = {
     -- C/C++
     "clangd",
     "clang-format",
+    "codelldb",
 
     -- CMake
-    -- "neocmakelsp",
+    "neocmakelsp",
 
     -- Java
     -- "jdtls",
