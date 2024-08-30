@@ -68,6 +68,7 @@ return {
       "cpp",
       "css",
       "go",
+      "gotmpl",
       "html",
       "http",
       "json",
