@@ -66,6 +66,7 @@ return {
       "bash",
       "c",
       "cpp",
+      "c_sharp",
       "css",
       "go",
       "gotmpl",

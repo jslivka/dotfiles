@@ -281,7 +281,7 @@ M.mason = {
     "gopls",
 
     -- C#
-    -- "omnisharp",
+    "omnisharp",
     -- "omnisharp-mono",
   },
 }
@@ -289,8 +289,8 @@ M.mason = {
 M.lsp = { signature = false }
 
 M.base46 = {
-  theme = "tokyonight",
-  theme_toggle = { "tokyonight", "one_light" },
+  theme = "aquarium",
+  theme_toggle = { "aquarium", "one_light" },
   hl_override = highlights.override,
   hl_add = highlights.add,
   integrations = {

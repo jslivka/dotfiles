@@ -3,6 +3,7 @@ local formatters_by_ft = {
   python = { "autopep8" },
   cpp = { "clang_format" },
   c = { "clang_format" },
+  cs = { "csharpier" },
   go = { "gofumpt" },
   yaml = { "yamlfmt" },
   css = { "prettier" },
