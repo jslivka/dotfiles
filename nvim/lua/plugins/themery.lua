@@ -4,9 +4,13 @@ return {
   config = function()
     require("themery").setup({
       themes = {
-        "gruvbox",
         "ayu",
+        "catppuccin",
+        "gruvbox",
+        "kanagawa",
+        "tokyonight",
         "vague",
+        "everforest",
       },
       livePreview = true,
     })
