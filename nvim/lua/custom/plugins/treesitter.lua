@@ -1,6 +1,9 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
     opts = {
       ensure_installed = {
         "bash",
@@ -18,6 +21,13 @@ return {
         "vim",
         "yaml",
       },
+      indent = {
+        enable = true,
+      },
+      highlight = {
+        enable = true,
+      },
+      auto_install = true,
     },
   },
 }

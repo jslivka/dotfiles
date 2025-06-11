@@ -11,4 +11,6 @@ return {
   },
   { "rebelot/kanagawa.nvim" },
   { "neanias/everforest-nvim" },
+  { "RRethy/base16-nvim" },
+  { "projekt0n/caret.nvim" },
 }
