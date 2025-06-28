@@ -5,11 +5,6 @@ return {
       {
         path = "~/wiki/",
         syntax = "markdown",
-        ext = "md",
-        keys = {
-          "<leader>Ww",
-          "<leader>Wt",
-        },
       },
     }
   end,
