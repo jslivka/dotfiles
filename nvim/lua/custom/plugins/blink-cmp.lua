@@ -14,6 +14,8 @@ return {
     dependencies = {
       "rafamadriz/friendly-snippets",
       "moyiz/blink-emoji.nvim",
+      "Kaiser-Yang/blink-cmp-dictionary",
+      dependencies = { "nvim-lua/plenary.nvim" },
     },
 
     -- use a release tag to download pre-built binaries
@@ -50,14 +52,32 @@ return {
       },
 
       -- (Default) Only show the documentation popup when manually triggered
-      completion = { documentation = { auto_show = true } },
+      -- completion = { documentation = { auto_show = true } },
+      completion = {
+        documentation = { auto_show = true },
+        list = {
+          selection = {
+            auto_insert = true,
+          },
+        },
+      },
       signature = { enabled = true },
 
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        default = { "lsp", "path", "snippets", "buffer", "emoji" },
+        default = { "dictionary", "lsp", "path", "snippets", "buffer", "emoji" },
         providers = {
+          dictionary = {
+            module = "blink-cmp-dictionary",
+            name = "Dict",
+            -- Make sure this is at least 2.
+            -- 3 is recommended
+            min_keyword_length = 3,
+            opts = {
+              -- options for blink-cmp-dictionary
+            },
+          },
           emoji = {
             module = "blink-emoji",
             name = "Emoji",
