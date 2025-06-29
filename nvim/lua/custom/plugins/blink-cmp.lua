@@ -76,6 +76,8 @@ return {
             min_keyword_length = 3,
             opts = {
               -- options for blink-cmp-dictionary
+              -- curl https://raw.githubusercontent.com/dwyl/english-words/refs/heads/master/words.txt --output ~/.config/nvim/dictionary
+              dictionary_directories = { vim.fn.expand("~/.config/nvim/dictionary") },
             },
           },
           emoji = {
