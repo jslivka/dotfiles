@@ -13,4 +13,17 @@ return {
   { "neanias/everforest-nvim" },
   { "RRethy/base16-nvim" },
   { "projekt0n/caret.nvim" },
+  {
+    "eldritch-theme/eldritch.nvim",
+    lazy = true,
+    name = "eldritch",
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+  },
+  { "Edeneast/nightfox.nvim" },
 }
