@@ -1,3 +1,8 @@
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
 return {
   {
     "saghen/blink.compat",
@@ -40,9 +45,39 @@ return {
       -- C-k: Toggle signature help (if signature.enabled = true)
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
+      -- keymap = {
+      --   preset = "default",
+      --   ["<C-Z>"] = { "accept", "fallback" },
+      -- },
       keymap = {
-        preset = "default",
-        ["<C-Z>"] = { "accept", "fallback" },
+        preset = "none",
+
+        ["<Up>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
+
+        ["<C-p>"] = { "select_prev", "fallback" },
+        ["<C-n>"] = { "select_next", "fallback" },
+        ["<CR>"] = { "select_and_accept", "fallback" },
+        ["<Tab>"] = {
+          function(cmp)
+            if cmp.is_visible() then
+              return cmp.select_next()
+            elseif has_words_before() then
+              return cmp.select_and_accept()
+            end
+          end,
+          "snippet_forward",
+          "fallback",
+        },
+        ["<S-Tab>"] = {
+          function(cmp)
+            return cmp.select_prev()
+          end,
+          "snippet_backward",
+          "fallback",
+        },
+        -- disable a keymap from the preset
+        ["<C-y>"] = { "hide", "fallback" },
       },
 
       appearance = {
@@ -66,7 +101,7 @@ return {
       -- Default list of enabled providers defined so that you can extend it
       -- elsewhere in your config, without redefining it, due to `opts_extend`
       sources = {
-        default = { "dictionary", "lsp", "path", "snippets", "buffer", "emoji" },
+        default = { "lsp", "dictionary", "path", "snippets", "buffer", "emoji" },
         providers = {
           dictionary = {
             module = "blink-cmp-dictionary",

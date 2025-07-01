@@ -3,6 +3,9 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "gomodifytags",
+        "impl",
+        "delve",
         "flake8",
         "shellcheck",
         "shfmt",

@@ -23,6 +23,7 @@ return {
     formatters_by_ft = {
       templ = { "templ" },
       python = { "ruff_format" },
+      go = { "goimports", "gofumpt" },
     },
   },
 }
