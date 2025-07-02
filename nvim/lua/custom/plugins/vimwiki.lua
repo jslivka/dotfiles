@@ -4,7 +4,6 @@ return {
     vim.g.vimwiki_list = {
       {
         path = "~/wiki/",
-        syntax = "markdown",
       },
     }
   end,
