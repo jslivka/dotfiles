@@ -23,6 +23,7 @@ return {
         "tsx",
         "vim",
         "yaml",
+        "zig",
       },
       indent = {
         enable = true,
