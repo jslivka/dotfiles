@@ -8,6 +8,7 @@ return {
         zls = {},
         gopls = {
           settings = {
+            terraformls = {},
             gopls = {
               gofumpt = true,
               codelenses = {
