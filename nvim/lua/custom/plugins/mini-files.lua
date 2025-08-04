@@ -50,7 +50,7 @@ return {
     opts.options = vim.tbl_deep_extend("force", opts.options or {}, {
       -- Whether to use for editing directories
       -- Disabled by default in LazyVim because neo-tree is used for that
-      use_as_default_explorer = true,
+      use_as_default_explorer = false,
       -- If set to false, files are moved to the trash directory
       -- To get this dir run :echo stdpath('data')
       -- ~/.local/share/neobean/mini.files/trash
