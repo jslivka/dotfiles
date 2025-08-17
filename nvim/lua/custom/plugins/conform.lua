@@ -24,6 +24,7 @@ return {
       templ = { "templ" },
       python = { "ruff_format" },
       go = { "goimports", "gofumpt" },
+      zig = { "zigfmt" },
     },
   },
 }
