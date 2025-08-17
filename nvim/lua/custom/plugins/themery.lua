@@ -17,6 +17,7 @@ return {
         "nightfox",
         "tokyonight",
         "vague",
+        "melange",
       },
       livePreview = true,
     })

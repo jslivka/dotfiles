@@ -33,4 +33,5 @@ return {
     },
   },
   { "Edeneast/nightfox.nvim" },
+  { "savq/melange-nvim" },
 }
