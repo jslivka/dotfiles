@@ -34,4 +34,6 @@ return {
   },
   { "Edeneast/nightfox.nvim" },
   { "savq/melange-nvim" },
+  { "nanotech/jellybeans.vim" },
+  { "atelierbram/Base2Tone-nvim" },
 }
