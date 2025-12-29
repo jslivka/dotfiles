@@ -21,6 +21,7 @@ return {
   optional = true,
   opts = {
     formatters_by_ft = {
+      gdscript = { "gdformat" },
       templ = { "templ" },
       python = { "ruff_format" },
       go = { "goimports", "gofumpt" },
