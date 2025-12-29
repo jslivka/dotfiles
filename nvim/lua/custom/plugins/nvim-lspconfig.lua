@@ -6,6 +6,7 @@ return {
       -- ---@type lspconfig.options
       servers = {
         zls = {},
+        gdscript = {},
         gopls = {
           settings = {
             terraformls = {},
@@ -68,6 +69,7 @@ return {
           },
         },
       },
+      sqlls = {},
     },
   },
 }
